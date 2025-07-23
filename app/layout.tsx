@@ -24,7 +24,7 @@ html {
   --font-mono: ${GeistMono.variable};
 }
         `}</style>
-      </head>
+      '</head>'
       <body>{children}</body>
     </html>
   )

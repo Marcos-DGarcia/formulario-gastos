@@ -17,16 +17,16 @@ export async function createExpense(formData: FormData) {
     return { error: "Monto inválido" }
   }
 
-  const { error } = await supabase
-    .from("expenses")
-    .insert([
-      {
-        columna_fecha: date,
-        columna_concepto: description,
-        columna_monto: amount,
-        forma_pago: paymentMethod
-      }
-    ])
+  const { data, error } = await supabase
+  .from("expenses")
+  .insert([
+    {
+      columna_fecha: date,
+      columna_concepto: description,
+      columna_monto: amount,
+      forma_pago: paymentMethod
+    },
+  ]);
 
   if (error) {
     console.error("Error Supabase:", error)
